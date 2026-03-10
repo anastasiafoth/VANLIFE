@@ -5,6 +5,7 @@ export default function Header() {
     <nav>
       <Link to="/">#VANLIFE</Link>
       <div className="nav-links">
+        <Link to="/host">Host</Link>
         <Link to="/about">About</Link>
         <Link to="/vans">Vans</Link>
       </div>
