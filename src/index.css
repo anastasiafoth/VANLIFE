@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 html,
@@ -42,22 +43,22 @@ nav {
   color: #aaaaaa;
 }
 
-.main-content {
-  padding: 4rem 1.6rem;
-
-  color: var(--text-color);
-}
-
 .text--light {
   background-image: url("../public/image 53.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   --text-color: #fff;
+  padding: 4rem 1.6rem;
 }
 
 .text--dark {
   --text-color: #000;
+  padding: 4rem 1.6rem;
+}
+
+.main-content {
+  color: var(--text-color);
 }
 
 .main-content p {
@@ -105,6 +106,98 @@ img {
     width: 40%;
 }
 
+/* ---------- Vans ---------- */
+
+.van-type {
+  display: inline-block;
+  margin-top: 10px;
+  background: #FFEAD0;
+  color: #4D4D4D;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.van-type a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.clean-link {
+  color: #4D4D4D;
+}
+
+.filter ul {
+  display: flex;        
+  list-style: none;     /* no Bullet-Points */
+  padding: 0;           
+  margin: 0;            
+  gap: 20px;            /* gap between Buttons */
+}
+
+.filter {
+  display: flex;
+  align-items: baseline;
+  margin: 1.4rem 0 3.5rem;
+  flex-wrap: wrap;
+  gap: 20px;  
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+.van-info {
+  display:block;
+  justify-content:space-between;
+  padding: 1.6rem 0
+}
+
+.van-info-price {
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+}
+
+.day-price h3 {
+  margin: 0;
+}
+
+.day-price p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.simple {
+  background: #d97855;
+  color: #FFEAD0;
+}
+
+.rugged {
+  background: #115E59;
+  color: #FFEAD0;
+}
+
+.luxury {
+  background: #161616;
+  color: #FFEAD0;
+}
+
+.van-card {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------- Footer ---------- */
 
 footer {
   background-color: #252525;
