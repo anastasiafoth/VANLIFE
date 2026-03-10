@@ -31,8 +31,8 @@ export default function Vans() {
       </div>
       <div className="cards">
         {vans.map((van) => (
-          <div className="card">
-            <Link key={van.id} to={`/vans/${van.id}`} className="van-card">
+          <div key={van.id} className="card">
+            <Link to={`/vans/${van.id}`} className="van-card">
               <img src={van.imageUrl} alt={`van: ${van.name}`} />
               <div className="van-info-price">
                 <div className="van-info">
