@@ -22,7 +22,6 @@ export default function About() {
           </Link>
         </div>
       </div>
-      <footer>Ⓒ 2026 #VANLIFE</footer>
     </>
   );
 }

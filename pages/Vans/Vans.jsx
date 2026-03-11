@@ -50,7 +50,6 @@ export default function Vans() {
           </div>
         ))}
       </div>
-      <footer>Ⓒ 2026 #VANLIFE</footer>
     </div>
   );
 }
