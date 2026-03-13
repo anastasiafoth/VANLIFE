@@ -123,10 +123,10 @@ img {
 
 .van-type {
   display: inline-block;
-  margin-top: 10px;
+  padding: 6px 16px;
+  margin-top: 1rem;
   background: #ffead0;
   color: #4d4d4d;
-  padding: 6px 14px;
   border-radius: 6px;
   font-weight: 600;
 }
@@ -161,6 +161,7 @@ img {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 25px;
+  margin-top: 2rem;
 }
 
 .card img {
@@ -221,7 +222,7 @@ img {
 }
 
 .van-detail {
-  max-width: 420px;
+  max-width: 550px;
   width: 100%;
   overflow: hidden;
 }
@@ -236,20 +237,13 @@ img {
 }
 
 /* Content padding below image */
+/* Description */
 .van-detail {
   padding-left: 20px;
   padding-right: 20px;
-}
-
-/* Type badge (e.g. "Simple") */
-.van-type {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 6px 16px;
-  border-radius: 6px;
-  font-style: normal;
-  font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 28px;
 }
 
 /* Van name */
@@ -273,13 +267,6 @@ img {
   font-weight: 800;
 }
 
-/* Description */
-.van-detail {
-  font-weight: 500;
-  line-height: 1.5;
-  margin-bottom: 28px;
-}
-
 /* CTA Button */
 .link-button-rent {
   display: block;
@@ -298,6 +285,80 @@ img {
 
 .link-button-rent:hover {
   transform: translate(1px, 1px);
+}
+
+/* ---------- HostVans ---------- */
+
+a.mini-card {
+  text-decoration: none;
+  color: #161616;
+}
+
+.mini-card {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 18px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.mini-card p {
+  color: #4d4d4d;
+}
+
+.mini-card img {
+  width: 40%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.van-info {
+  flex: 1;
+}
+
+/* ---------- HostVanDetail ---------- */
+
+.host {
+  width:50%;
+  padding: 1.6rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.host img {
+  width: 40%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.header-info {
+  display: flex;
+  align-items:center;
+  gap:1rem;
+}
+
+.host > p, h2 {
+  margin: 0.5rem 0;
+}
+
+.host span {
+  font-weight: 700;
+}
+
+.host > nav {
+  padding:1.6rem 0 2rem;
 }
 
 /* ---------- Footer ---------- */
