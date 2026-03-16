@@ -1,21 +1,21 @@
 import { useState, useEffect } from "react";
-import { useParams, NavLink, Link } from "react-router-dom";
+import { useParams, NavLink, Link, Outlet } from "react-router-dom";
 
 export default function HostVanDetail() {
   const params = useParams();
   const [van, setVan] = useState(null);
-
-  useEffect(() => {
-    fetch(`/api/host/vans/${params.id}`)
-      .then((res) => res.json())
-      .then((data) => setVan(data.vans));
-  }, [params.id]);
 
   const activeStyle = {
     fontWeight: "bold",
     textDecoration: "underline",
     color: "#161616",
   };
+
+  useEffect(() => {
+    fetch(`/api/host/vans/${params.id}`)
+      .then((res) => res.json())
+      .then((data) => setVan(data.vans));
+  }, [params.id]);
 
   return (
     <section>
@@ -27,7 +27,7 @@ export default function HostVanDetail() {
         {van ? (
           <div className="host">
             <div className="header-info">
-              <img src={van.imageUrl} />
+              <img src={van.imageUrl} className="host-van-detail-img"/>
               <div className="info">
                 <p className={`van-type ${van.type}`}>
                   {van.type.charAt(0).toUpperCase() + van.type.slice(1)}
@@ -41,40 +41,27 @@ export default function HostVanDetail() {
             <nav>
               <div className="nav-links">
                 <NavLink
-                  to="/host"
+                  to="."
+                  end
                   style={({ isActive }) => (isActive ? activeStyle : null)}
                 >
                   Details
                 </NavLink>
                 <NavLink
-                  to="/host"
+                  to="pricing"
                   style={({ isActive }) => (isActive ? activeStyle : null)}
                 >
                   Pricing
                 </NavLink>
                 <NavLink
-                  to="/host"
+                  to="photos"
                   style={({ isActive }) => (isActive ? activeStyle : null)}
                 >
                   Photos
                 </NavLink>
               </div>
             </nav>
-            <p>
-              <span>Name: </span>
-              {van.name}
-            </p>
-            <p>
-              <span>Category: </span>
-              {van.type}
-            </p>
-            <p>
-              <span>Description:</span>
-              {van.description}
-            </p>
-            <p>
-              <span>Visibility: </span>Public
-            </p>
+            <Outlet context={{ van }} />
           </div>
         ) : (
           <h2>Loading...</h2>
