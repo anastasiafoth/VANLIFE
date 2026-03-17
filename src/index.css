@@ -72,6 +72,7 @@ nav {
 
 .main-content {
   color: var(--text-color);
+  padding: 1.6rem;
 }
 
 .main-content p {
@@ -230,7 +231,7 @@ section {
 .van-detail-container {
   min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction:column;
   align-items: flex-start;
   padding: 0;
 }
@@ -282,7 +283,7 @@ section {
 }
 
 /* CTA Button */
-.link-button-rent {
+.link-button {
   display: block;
   padding: 18px;
   margin: 1.6rem 0;
@@ -297,7 +298,7 @@ section {
   transition: transform 0.1s ease-in-out;
 }
 
-.link-button-rent:hover {
+.link-button:hover {
   transform: translate(1px, 1px);
 }
 
