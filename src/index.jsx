@@ -25,7 +25,7 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/vans" element={<Vans />} />
+          <Route path="/vans" element={<Vans />}> </Route>
           <Route path="/vans/:id" element={<VanDetail />} />
 
           <Route path="/host" element={<HostLayout />}>

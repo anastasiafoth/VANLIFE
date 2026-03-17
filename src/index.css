@@ -112,38 +112,63 @@ nav {
 }
 
 /* ---------- Vans ---------- */
-
 .van-type {
   display: inline-block;
-  padding: 6px 16px;
+  height: 34px;
+  padding: 6px 26px;
   margin-top: 1rem;
-  background: #ffead0;
+  font-style: normal;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffead0;
   color: #4d4d4d;
-  border-radius: 6px;
-  font-weight: 600;
-}
-
-.van-type a {
-  text-decoration: none;
+  transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-  color: inherit;
 }
 
-.clean-link {
+.van-type:hover {
+  color: #ffead0;
+}
+
+.van-type:focus {
+  outline: none;
+}
+
+.van-type.selected {
+  color: #ffead0;
+}
+
+.van-type.simple:hover,
+.van-type.simple.selected {
+  background-color: #e17654;
+}
+
+.van-type.rugged:hover,
+.van-type.rugged.selected {
+  background-color: #115e59;
+}
+
+.van-type.luxury:hover,
+.van-type.luxury.selected {
+  background-color: #161616;
+}
+
+.van-type.clear-filters {
+  margin-left: -20px;
+  height: 34px;
+  padding: 6px 26px;
+  font-style: normal;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  text-decoration: underline;
+  background-color: transparent;
   color: #4d4d4d;
 }
 
-.filter ul {
+.filter-buttons {
   display: flex;
-  list-style: none; /* no Bullet-Points */
-  padding: 0;
-  margin: 0;
-  gap: 20px; /* gap between Buttons */
-}
-
-.filter {
-  display: flex;
-  align-items: baseline;
   margin: 1.4rem 0 3.5rem;
   flex-wrap: wrap;
   gap: 20px;
@@ -183,20 +208,7 @@ nav {
   font-size: 14px;
 }
 
-.simple {
-  background: #d97855;
-  color: #ffead0;
-}
 
-.rugged {
-  background: #115e59;
-  color: #ffead0;
-}
-
-.luxury {
-  background: #161616;
-  color: #ffead0;
-}
 
 .van-card {
   text-decoration: none;
@@ -384,7 +396,7 @@ h2 {
 }
 
 .host-van-img {
-  width: 100px !important; 
+  width: 100px !important;
   height: 100px !important;
   object-fit: cover;
   border-radius: 5px;
