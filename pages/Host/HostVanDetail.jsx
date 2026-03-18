@@ -1,21 +1,44 @@
 import { useState, useEffect } from "react";
 import { useParams, NavLink, Link, Outlet } from "react-router-dom";
+import { getHostVans } from "../../src/api";
 
 export default function HostVanDetail() {
   const params = useParams();
-  const [van, setVan] = useState(null);
+  const [currentVan, setCurrentVan] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  console.log(params);
+
+  useEffect(() => {
+    async function loadVans() {
+      setLoading(true);
+      try {
+        const data = await getHostVans(params.id);
+        setCurrentVan(data);
+      } catch (err) {
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadVans();
+  }, [params.id]);
+
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
+
+  if (error) {
+    return <h1>There was an error: {error.message}</h1>;
+  }
 
   const activeStyle = {
     fontWeight: "bold",
     textDecoration: "underline",
     color: "#161616",
   };
-
-  useEffect(() => {
-    fetch(`/api/host/vans/${params.id}`)
-      .then((res) => res.json())
-      .then((data) => setVan(data.vans));
-  }, [params.id]);
 
   return (
     <section>
@@ -24,17 +47,18 @@ export default function HostVanDetail() {
       </Link>
 
       <div className="van-detail-container">
-        {van ? (
+        {currentVan ? (
           <div className="host">
             <div className="header-info">
-              <img src={van.imageUrl} className="host-van-detail-img"/>
+              <img src={currentVan.imageUrl} className="host-van-detail-img" />
               <div className="info">
-                <p className={`van-type ${van.type}`}>
-                  {van.type.charAt(0).toUpperCase() + van.type.slice(1)}
+                <p className={`van-type ${currentVan.type}`}>
+                  {currentVan.type.charAt(0).toUpperCase() +
+                    currentVan.type.slice(1)}
                 </p>
-                <h2>{van.name}</h2>
+                <h2>{currentVan.name}</h2>
                 <p className="van-price">
-                  <span>${van.price}</span>/day
+                  <span>${currentVan.price}</span>/day
                 </p>
               </div>
             </div>
@@ -61,7 +85,7 @@ export default function HostVanDetail() {
                 </NavLink>
               </div>
             </nav>
-            <Outlet context={{ van }} />
+            <Outlet context={{ currentVan }} />
           </div>
         ) : (
           <h2>Loading...</h2>

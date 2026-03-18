@@ -43,6 +43,10 @@ nav > a {
   color: #161616;
 }
 
+.nav-links img {
+  width: 24px;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -209,8 +213,6 @@ nav {
   font-size: 14px;
 }
 
-
-
 .van-card {
   text-decoration: none;
   color: inherit;
@@ -231,7 +233,7 @@ section {
 .van-detail-container {
   min-height: 100vh;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   align-items: flex-start;
   padding: 0;
 }
@@ -401,6 +403,62 @@ h2 {
   height: 100px !important;
   object-fit: cover;
   border-radius: 5px;
+}
+
+/* ---------- Login ---------- */
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-inline: 27px;
+}
+
+.login-container h1 {
+  margin: 1.3rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+}
+
+.login-form > input {
+  border: 1px solid rgba(209, 213, 219);
+  height: 40px;
+  text-indent: 10px;
+  font-family: "Inter", sans-serif;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  font-weight: 400;
+}
+
+.login-form > input:focus {
+  outline: none;
+}
+
+.login-form > input:first-of-type {
+  border-radius: 6px 6px 0px 0px;
+}
+
+.login-form > input:last-of-type {
+  border-radius: 0px 0px 6px 6px;
+  border-top: none;
+}
+
+.login-form > button {
+  background-color: #ff8c38;
+  border: none;
+  border-radius: 6px;
+  height: 55px;
+  margin-top: 22px;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+
+.login-first {
+  color: red;
 }
 
 /* ---------- Footer ---------- */

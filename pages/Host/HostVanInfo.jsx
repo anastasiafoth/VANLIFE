@@ -2,21 +2,21 @@
 import { useOutletContext } from "react-router-dom";
 
 export default function HostVanInfo() {
-  const { van } = useOutletContext();
+  const { currentVan } = useOutletContext();
   
   return (
     <>
       <p>
         <span>Name: </span>
-        {van.name}
+        {currentVan.name}
       </p>
       <p>
         <span>Category: </span>
-        {van.type}
+        {currentVan.type}
       </p>
       <p>
         <span>Description:</span>
-        {van.description}
+        {currentVan.description}
       </p>
       <p>
         <span>Visibility: </span>Public
