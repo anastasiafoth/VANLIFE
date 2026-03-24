@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, NavLink, Link, Outlet } from "react-router-dom";
-import { getHostVans } from "../../src/api";
+// is only a not permanent solution, since there is no real auth build in
+import { getVan } from "../../src/api";
 
 export default function HostVanDetail() {
   const params = useParams();
@@ -14,7 +15,7 @@ export default function HostVanDetail() {
     async function loadVans() {
       setLoading(true);
       try {
-        const data = await getHostVans(params.id);
+        const data = await getVan(params.id);
         setCurrentVan(data);
       } catch (err) {
         setError(err);
