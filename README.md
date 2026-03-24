@@ -1,16 +1,60 @@
-# React + Vite
+# VanLife
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React application for van rentals and vanlife experiences.
 
-Currently, two official plugins are available:
+## Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+VanLife is a web app that allows users to browse and rent vans for their adventures. Hosts can manage their vans, view income, and handle reviews.
 
-## React Compiler
+## Live Demo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Check out the live version at [https://van-life-by-ananas.netlify.app/](https://van-life-by-ananas.netlify.app/)
 
-## Expanding the ESLint configuration
+use this for login: 
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+email: an@nas.com
+password: p123
+
+## Features
+
+- Browse available vans
+- View van details
+- User authentication
+- Host dashboard for managing vans
+- Income tracking
+- Reviews management
+
+## Tech Stack
+
+- React 19
+- Vite
+- React Router DOM
+- Firebase
+- MirageJS (for API mocking)
+- ESLint
+
+## Installation
+
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Start the development server: `npm run dev`
+
+## Usage
+
+- Visit the home page to see featured vans
+- Browse all vans on the Vans page
+- Login to access host features
+
+## Project Structure
+
+- `src/`: Main source code
+- `components/`: Reusable components
+- `pages/`: Page components
+- `public/`: Static assets
+
+## Scripts
+
+- `npm run dev`: Start development server
+- `npm run build`: Build for production
+- `npm run lint`: Run ESLint
+- `npm run preview`: Preview production build
